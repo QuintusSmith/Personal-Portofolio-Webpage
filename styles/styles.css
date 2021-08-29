@@ -1,11 +1,118 @@
-/* 
+/* @note specifications
 #9: My portfolio should have at least one media query.
 
 #10: The height of the welcome section should be equal to the height of the viewport.
 
 #11: The navbar should always be at the top of the viewport.
 
+@note import and use
+
 https://raw.githubusercontent.com/QuintusSmith/Personal-Portofolio-Webpage/master/images/quintus.webp
 
 font-family: "Font Awesome 5 Free"
+
+@note options
+
+font-size: 7.2 / 4.8 / 3.6 / 2.8 / 1.8 rem;
+letter-spacing: 1.8 / 1.2 / 0.9 / 0.7 / 0.45 rem;
+text-color: black / hsla(122, 92%, 20%, 1) / #ddd
+background-color: black / hsla(122, 92%, 20%, 1) / #ddd
+border: 1rem solid / inset / outset black / hsla(122, 92%, 20%, 1) / #ddd
 */
+
+/* @note universal selecters */
+
+*,
+*::after,
+*::before
+{
+    box-sizing: border-box;
+}
+
+:root
+{
+    font-size: 1vmin;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* @note main body display */
+
+body
+{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    background-color: #222;
+    overflow-x: hidden;
+}
+
+/* @note navigation settings */
+
+nav
+{
+    position: fixed;
+    height: 9.8rem;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0rem;
+    background-color: hsla(122, 92%, 20%, .7);
+    border-bottom: .6rem outset hsla(122, 92%, 10%, .4);
+    box-shadow: 0rem 1rem 1rem 1rem black;
+    z-index: 10;
+}
+
+.nav-link
+{
+    text-decoration: none;
+    margin: 0rem 4rem;
+    font-size: 4.8rem;
+    letter-spacing: 1.2rem;
+    color: hsla(0, 0%, 100%, .7);
+    border-radius: 5rem;
+    padding: 0.2rem 2rem;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active
+{
+    color: black;
+    background-color: hsla(122, 92%, 45%, 1);
+    transform: scale(1.2);
+}
+
+.first-impression
+{
+    width: 100vw;
+    height: 100vh;
+    border-bottom: .6rem outset hsla(122, 92%, 10%, .4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* @todo first section settings */
+
+.first-impression h1
+{
+
+}
+
+.first-impression h3
+{
+
+}
+
+.profile-photo
+{
+
+}
