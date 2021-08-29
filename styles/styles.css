@@ -15,9 +15,10 @@ font-family: "Font Awesome 5 Free"
 
 font-size: 7.2 / 4.8 / 3.6 / 2.8 / 1.8 rem;
 letter-spacing: 1.8 / 1.2 / 0.9 / 0.7 / 0.45 rem;
-text-color: black / hsla(122, 92%, 20%, 1) / #ddd
-background-color: black / hsla(122, 92%, 20%, 1) / #ddd
-border: 1rem solid / inset / outset black / hsla(122, 92%, 20%, 1) / #ddd
+color: #222 / hsla(122, 92%, 20%, 1) / #ddd;
+text-shadow: .1rem .2rem .1rem white/black/hsla(122, 92%, 20%, 1) ;
+background-color: #222 / hsla(122, 92%, 20%, 1) / #ddd;
+border: 1rem solid / inset / outset #222 / hsla(122, 92%, 20%, 1) / #ddd;
 */
 
 /* @note universal selecters */
@@ -29,10 +30,19 @@ border: 1rem solid / inset / outset black / hsla(122, 92%, 20%, 1) / #ddd
     box-sizing: border-box;
 }
 
+@media screen and (max-width: 370px) {
+    body
+    {
+        background-color: #444;
+    }
+}
+
 :root
 {
     font-size: 1vmin;
     font-family: 'Times New Roman', Times, serif;
+    scroll-padding-top: 12rem;
+    scroll-behavior: smooth;
 }
 
 /* @note main body display */
@@ -48,23 +58,56 @@ body
     overflow-x: hidden;
 }
 
+h1
+{
+    font-size: 7.2rem;
+    letter-spacing: 1.8rem;
+    color:#ddd;
+    text-shadow: .2rem .2rem .4rem black;
+    margin: 0rem;
+    margin-top: 15rem;
+    margin-bottom: 2rem;
+    z-index: 1;
+    font-weight: 700;
+}
+
+h2
+{
+    font-size: 4.8rem;
+    letter-spacing: 1.2rem;
+    color: #ddd;
+    text-shadow: .1rem .1rem .3rem white;
+    margin: 0;
+    z-index: 1;
+    font-weight: 700;
+}
+
+h3
+{
+    font-size: 3.6rem;
+    letter-spacing: 0.9rem;
+    color: #ddd;
+    text-shadow: .1rem .1rem .2rem white;
+    margin: 0;
+    z-index: 1;
+    font-weight: 700;
+}
+
 /* @note navigation settings */
 
 nav
 {
     position: fixed;
-    height: 9.8rem;
     left: 0;
     right: 0;
     top: 0;
-    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0rem;
     background-color: hsla(122, 92%, 20%, .7);
     border-bottom: .6rem outset hsla(122, 92%, 10%, .4);
     box-shadow: 0rem 1rem 1rem 1rem black;
+    height: 12rem;
     z-index: 10;
 }
 
@@ -77,6 +120,8 @@ nav
     color: hsla(0, 0%, 100%, .7);
     border-radius: 5rem;
     padding: 0.2rem 2rem;
+    text-shadow: .2rem .2rem .2rem black;
+    border: 0.5rem outset transparent;
 }
 
 .nav-link:hover,
@@ -85,14 +130,18 @@ nav
 {
     color: black;
     background-color: hsla(122, 92%, 45%, 1);
+    border: 0.5rem outset hsla(122, 92%, 25%, 1);
     transform: scale(1.2);
+    text-shadow: none;
+    box-shadow: 0rem .5rem 2rem .5rem black;
 }
+
+/* @note first section settings */
 
 .first-impression
 {
     width: 100vw;
     height: 100vh;
-    border-bottom: .6rem outset hsla(122, 92%, 10%, .4);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,19 +149,205 @@ nav
     position: relative;
 }
 
-/* @todo first section settings */
-
-.first-impression h1
-{
-
-}
-
-.first-impression h3
-{
-
-}
-
 .profile-photo
+{
+    width: 100%;
+    height: auto;
+    width: 43.2rem;
+    margin-bottom: 2rem;
+    border: 1rem outset hsla(122, 92%, 25%, 1);
+    box-shadow: 0rem 0rem 5rem 4rem black;
+    z-index: 2;
+}
+
+.accent-text
+{
+    color: hsla(122, 92%, 20%, 1);
+    text-shadow: .1rem .1rem .2rem black;
+}
+
+/* @note projects section settings */
+
+.project-main-container
+{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto auto;
+}
+
+.project-main-container h2
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: hsla(122, 92%, 3%, 1);
+    border-bottom: .6rem outset hsla(122, 92%, 10%, .4);
+    box-shadow: 0rem 1rem 1rem 1rem black;
+    height: 10rem;
+    z-index: 2;
+}
+
+.projects-collection-container
+{
+    margin-top: 3rem;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.project-tile
+{
+    width: 45%;
+    background-color: black;
+    margin-bottom: 6rem;
+    border: 1.5rem outset hsla(122, 92%, 50%, .4);
+    z-index: 1;
+}
+
+.project-tile a
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0rem 1rem 1rem 1rem black;
+}
+
+.project-title
+{
+    width: 100%;
+    font-size: 3.6rem;
+    letter-spacing: 0.9rem;
+    color: hsla(122, 92%, 20%, 1);
+    text-shadow: .1rem .1rem .1rem hsla(122, 92%, 40%, 1) ;
+    background-color: black;
+    box-shadow: 0rem 1rem 4rem 2rem black;
+    z-index: 3;
+}
+
+.project-image
+{
+    z-index: 2;
+    min-width: 100%;
+    min-height: auto;
+    height: 40rem;
+    width: 100%;
+    border: 1.5rem outset hsla(122, 92%, 30%, .1);
+    box-shadow: 0rem 1rem 8rem 2rem black;
+}
+
+.more-projects
+{
+    margin-top: -2rem ;
+    width: auto;
+    padding: 2rem 8rem;
+    font-size: 3.6rem;
+    letter-spacing: 0.9rem;
+    color: hsla(122, 92%, 20%, 1);
+    background-color: black;
+    text-shadow: .1rem .1rem .1rem hsla(122, 100%, 100%, .6) ;
+    background: linear-gradient(90deg, hsla(122, 92%, 30%, .8) 0%, transparent 3%, transparent 97%, hsla(122, 92%, 30%, .8)100%),linear-gradient(0deg, hsla(122, 92%, 30%, .8) 0%, black 15%, black 85%, hsla(122, 92%, 30%, .8)100%);
+    box-shadow: 0rem 1rem 4rem 2rem black;
+    z-index: 3;
+    text-align: center;
+    border: .5rem outset hsla(122, 92%, 20%, .4);
+    outline: none;
+    border-radius: 5rem;
+}
+
+.more-projects:hover,
+.more-projects:focus,
+.more-projects:active
+{
+    text-shadow: .1rem .1rem .1rem hsla(122, 100%, 100%, 1) ;
+    border: .5rem inset hsla(122, 92%, 20%, 1);
+}
+
+/* @todo contact section settings */
+
+.contact-section
+{
+    margin-top: 5rem;
+    width: 100vw;
+    height: 88vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 2rem outset hsla(122, 92%, 20%, .4);
+    z-index: 1;
+    box-shadow: 0rem -2rem 4rem 2rem black;
+}
+
+.contact-header
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.contact-header h1
+{
+    margin: 0;
+    letter-spacing: .2rem;
+    word-spacing: -2.5rem;
+    font-weight: 900;
+    font-size: 12rem;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: -1.5rem;
+}
+
+.contact-header h3
+{
+    font-weight: 100;
+    text-shadow: none;
+    margin-top: 0;
+}
+
+.contact-links-collection
+{
+
+}
+
+.contact-link
+{
+
+}
+
+.contact-link-github::before
+{
+
+}
+
+.contact-link-fcc::before
+{
+
+}
+
+.contact-link-twitter::before
+{
+
+}
+
+.contact-link-linkedin::before
+{
+
+}
+
+
+.contact-link-email
 {
 
 }
