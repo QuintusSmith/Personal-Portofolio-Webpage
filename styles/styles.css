@@ -162,7 +162,7 @@ nav
 
 .accent-text
 {
-    color: hsla(122, 92%, 20%, 1);
+    color: hsla(122, 50%, 65%, 1);
     text-shadow: .1rem .1rem .2rem black;
 }
 
@@ -205,10 +205,8 @@ nav
 .project-tile
 {
     width: 45%;
-    background-color: black;
     margin-bottom: 6rem;
-    border: 1.5rem outset hsla(122, 92%, 50%, .4);
-    z-index: 1;
+    z-index: 3;
 }
 
 .project-tile a
@@ -219,6 +217,16 @@ nav
     align-items: center;
     text-decoration: none;
     box-shadow: 0rem 1rem 1rem 1rem black;
+    border: 1.5rem outset hsla(122, 92%, 50%, .4);
+    transition: transform 250ms linear;
+    z-index: 3;
+}
+
+.project-tile a:hover,
+.project-tile a:focus,
+.project-tile a:active
+{
+    transform: scale(1.11);
 }
 
 .project-title
@@ -226,7 +234,7 @@ nav
     width: 100%;
     font-size: 3.6rem;
     letter-spacing: 0.9rem;
-    color: hsla(122, 92%, 20%, 1);
+    color: hsla(122, 40%, 65%, 1);
     text-shadow: .1rem .1rem .1rem hsla(122, 92%, 40%, 1) ;
     background-color: black;
     box-shadow: 0rem 1rem 4rem 2rem black;
@@ -251,14 +259,14 @@ nav
     padding: 2rem 8rem;
     font-size: 3.6rem;
     letter-spacing: 0.9rem;
-    color: hsla(122, 92%, 20%, 1);
+    color: hsla(122, 92%, 70%, 1);
     background-color: black;
     text-shadow: .1rem .1rem .1rem hsla(122, 100%, 100%, .6) ;
-    background: linear-gradient(90deg, hsla(122, 92%, 30%, .8) 0%, transparent 3%, transparent 97%, hsla(122, 92%, 30%, .8)100%),linear-gradient(0deg, hsla(122, 92%, 30%, .8) 0%, black 15%, black 85%, hsla(122, 92%, 30%, .8)100%);
+    background: linear-gradient(90deg, hsla(122, 92%, 20%, .8) 0%, transparent 3%, transparent 97%, hsla(122, 92%, 20%, .8)100%),linear-gradient(0deg, hsla(122, 92%, 20%, .8) 0%, black 15%, black 85%, hsla(122, 92%, 20%, .8)100%);
     box-shadow: 0rem 1rem 4rem 2rem black;
     z-index: 3;
     text-align: center;
-    border: .5rem outset hsla(122, 92%, 20%, .4);
+    border: .5rem outset hsla(122, 92%, 40%, .4);
     outline: none;
     border-radius: 5rem;
 }
@@ -268,7 +276,8 @@ nav
 .more-projects:active
 {
     text-shadow: .1rem .1rem .1rem hsla(122, 100%, 100%, 1) ;
-    border: .5rem inset hsla(122, 92%, 20%, 1);
+    border: .5rem inset hsla(122, 100%, 40%, 1);
+    color: hsla(160, 90%, 75%, 1);
 }
 
 /* @todo contact section settings */
@@ -289,7 +298,7 @@ nav
     position: relative;
 }
 
-.contact-section::after
+.contact-section::before
 {
     position: absolute;
     content: '';
@@ -297,10 +306,11 @@ nav
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url("https://raw.githubusercontent.com/QuintusSmith/Personal-Portofolio-Webpage/master/images/contac_bg.webp");
+    background-image: url("https://raw.githubusercontent.com/QuintusSmith/Personal-Portofolio-Webpage/master/images/contact_bg.webp");
     background-position: center;
     background-size: 100% 100%;
-    opacity: .4;
+    opacity: .2;
+    z-index: 1;
 }
 
 .contact-header
@@ -312,6 +322,7 @@ nav
     width: 100%;
     height: auto;
     margin-top: 8.4rem;
+    z-index: 3;
 }
 
 .contact-header h1
@@ -339,6 +350,15 @@ nav
 {
     text-decoration: none;
     opacity: 1;
+    display: inline-block;
+    transition: transform 200ms linear;
+}
+
+a.accent-text:hover,
+a.accent-text:focus,
+a.accent-text:active
+{
+    transform: scale(1.2);
 }
 
 .contact-links-collection
@@ -349,20 +369,33 @@ nav
     justify-content: space-evenly;
     align-items: center;
     margin-top: 8.4rem;
+    z-index: 3;
 }
 
 .contact-link
 {
+    position: relative;
     outline: none;
     font-family: cursive;
     text-decoration: none;
     text-transform: capitalize;
     font-size: 4.2rem;
     letter-spacing: 0.4rem;
-    color: hsla(122, 92%, 40%, .7);
-    text-shadow: .1rem .2rem .1rem hsla(122, 92%, 60%, .7);
+    color: hsla(122, 75%, 75%, .7);
+    text-shadow: .1rem .2rem .1rem hsla(122, 92%, 80%, .8);
     opacity: 1;
     z-index: 2;
+    transition: transform 200ms linear;
+}
+
+.contact-link::before
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: max-content;
+    transform: translatex(-125%);
 }
 
 .contact-link:hover,
@@ -376,26 +409,41 @@ nav
 
 .contact-link-github::before
 {
-
+    content: "\f09b";
+    font-family: "Font Awesome 5 Brands";
+    color: hsl(205, 68%, 70%);
+    text-shadow: none;
 }
 
 .contact-link-fcc::before
 {
-
+    content: "\f2c5";
+    font-family: "Font Awesome 5 Brands";
+    color: hsl(207, 68%, 60%);
+    text-shadow: none;
 }
 
 .contact-link-twitter::before
 {
-
+    content: "\f099";
+    font-family: "Font Awesome 5 Brands";
+    color: hsl(203, 89%, 53%);
+    text-shadow: none;
 }
 
 .contact-link-linkedin::before
 {
-
+    content: "\f08c";
+    font-family: "Font Awesome 5 Brands";
+    color: hsl(201, 100%, 35%);
+    text-shadow: none;
 }
 
 
-.contact-link-email
+.contact-link-email::before
 {
-
+    content: "\f0e0";
+    font-family: "Font Awesome 5 Free";
+    color: hsl(199, 100%, 60%);
+    text-shadow: none;
 }
